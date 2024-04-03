@@ -62,18 +62,18 @@ def build_model(model_name):
 
     models = {
         "VGG-Face": VGGFace.loadModel,
-        "OpenFace": OpenFace.loadModel,
-        "Facenet": Facenet.loadModel,
-        "Facenet512": Facenet512.loadModel,
-        "DeepFace": FbDeepFace.loadModel,
-        "DeepID": DeepID.loadModel,
-        "Dlib": DlibWrapper.loadModel,
+        # "OpenFace": OpenFace.loadModel,
+        # "Facenet": Facenet.loadModel,
+        # "Facenet512": Facenet512.loadModel,
+        # "DeepFace": FbDeepFace.loadModel,
+        # "DeepID": DeepID.loadModel,
+        # "Dlib": DlibWrapper.loadModel,
         "ArcFace": ArcFace.loadModel,
-        "SFace": SFace.load_model,
-        "Emotion": Emotion.loadModel,
-        "Age": Age.loadModel,
-        "Gender": Gender.loadModel,
-        "Race": Race.loadModel,
+        # "SFace": SFace.load_model,
+        # "Emotion": Emotion.loadModel,
+        # "Age": Age.loadModel,
+        # "Gender": Gender.loadModel,
+        # "Race": Race.loadModel,
     }
 
     if not "model_obj" in globals():
