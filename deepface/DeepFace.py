@@ -17,14 +17,14 @@ from deprecated import deprecated
 # package dependencies
 from deepface.basemodels import (
     VGGFace,
-    OpenFace,
-    Facenet,
-    Facenet512,
-    FbDeepFace,
-    DeepID,
-    DlibWrapper,
+    # OpenFace,
+    # Facenet,
+    # Facenet512,
+    # FbDeepFace,
+    # DeepID,
+    # DlibWrapper,
     ArcFace,
-    SFace,
+    # SFace,
 )
 from deepface.extendedmodels import Age, Gender, Race, Emotion
 from deepface.commons import functions, realtime, distance as dst

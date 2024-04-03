@@ -3,15 +3,15 @@ from PIL import Image
 import numpy as np
 from deepface.commons import distance
 from deepface.detectors import (
-    OpenCvWrapper,
-    SsdWrapper,
-    DlibWrapper,
+    # OpenCvWrapper,
+    # SsdWrapper,
+    # DlibWrapper,
     MtcnnWrapper,
-    RetinaFaceWrapper,
-    MediapipeWrapper,
-    YoloWrapper,
-    YunetWrapper,
-    FastMtcnnWrapper,
+    # RetinaFaceWrapper,
+    # MediapipeWrapper,
+    # YoloWrapper,
+    # YunetWrapper,
+    # FastMtcnnWrapper,
 )
 
 
