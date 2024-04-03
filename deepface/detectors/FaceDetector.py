@@ -19,15 +19,15 @@ def build_model(detector_backend):
     global face_detector_obj  # singleton design pattern
 
     backends = {
-        "opencv": OpenCvWrapper.build_model,
-        "ssd": SsdWrapper.build_model,
-        "dlib": DlibWrapper.build_model,
+        # "opencv": OpenCvWrapper.build_model,
+        # "ssd": SsdWrapper.build_model,
+        # "dlib": DlibWrapper.build_model,
         "mtcnn": MtcnnWrapper.build_model,
-        "retinaface": RetinaFaceWrapper.build_model,
-        "mediapipe": MediapipeWrapper.build_model,
-        "yolov8": YoloWrapper.build_model,
-        "yunet": YunetWrapper.build_model,
-        "fastmtcnn": FastMtcnnWrapper.build_model,
+        # "retinaface": RetinaFaceWrapper.build_model,
+        # "mediapipe": MediapipeWrapper.build_model,
+        # "yolov8": YoloWrapper.build_model,
+        # "yunet": YunetWrapper.build_model,
+        # "fastmtcnn": FastMtcnnWrapper.build_model,
     }
 
     if not "face_detector_obj" in globals():
