@@ -64,15 +64,15 @@ def detect_face(face_detector, detector_backend, img, align=True):
 
 def detect_faces(face_detector, detector_backend, img, align=True):
     backends = {
-        "opencv": OpenCvWrapper.detect_face,
-        "ssd": SsdWrapper.detect_face,
-        "dlib": DlibWrapper.detect_face,
+        # "opencv": OpenCvWrapper.detect_face,
+        # "ssd": SsdWrapper.detect_face,
+        # "dlib": DlibWrapper.detect_face,
         "mtcnn": MtcnnWrapper.detect_face,
-        "retinaface": RetinaFaceWrapper.detect_face,
-        "mediapipe": MediapipeWrapper.detect_face,
-        "yolov8": YoloWrapper.detect_face,
-        "yunet": YunetWrapper.detect_face,
-        "fastmtcnn": FastMtcnnWrapper.detect_face,
+        # "retinaface": RetinaFaceWrapper.detect_face,
+        # "mediapipe": MediapipeWrapper.detect_face,
+        # "yolov8": YoloWrapper.detect_face,
+        # "yunet": YunetWrapper.detect_face,
+        # "fastmtcnn": FastMtcnnWrapper.detect_face,
     }
 
     detect_face_fn = backends.get(detector_backend)
