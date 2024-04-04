@@ -525,11 +525,10 @@ def find(
         pbar = tqdm(
             range(0, len(employees)),
             desc="Finding representations",
-            disable=silent,
+            disable=True,
         )
         for index in pbar:
             employee = employees[index]
-
             img_objs = functions.extract_faces(
                 img=employee,
                 target_size=target_size,
@@ -578,6 +577,7 @@ def find(
         columns=df_cols,
     )
 
+    start_time = time.time()
     # img path might have more than once face
     source_objs = functions.extract_faces(
         img=img_path,
@@ -587,9 +587,11 @@ def find(
         enforce_detection=enforce_detection,
         align=align,
     )
+    print(f"Extract faces time: {time.time() - start_time}")
 
     resp_obj = []
 
+    start_time = time.time()
     for source_img, source_region, _ in source_objs:
         target_embedding_obj = represent(
             img_path=source_img,
@@ -639,8 +641,8 @@ def find(
 
         resp_obj.append(result_df)
 
+    print(f"Find time: {time.time() - start_time}")
     # -----------------------------------
-
     toc = time.time()
 
     if not silent:
