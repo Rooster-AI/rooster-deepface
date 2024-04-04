@@ -736,6 +736,7 @@ def represent(
         # custom normalization
         img = functions.normalize_input(img=img, normalization=normalization)
 
+        start_time = time.time()
         # represent
         if "keras" in str(type(model)):
             # model.predict causes memory issue when it is called in a for loop
@@ -747,6 +748,8 @@ def represent(
         else:
             # SFace and Dlib are not keras models and no verbose arguments
             embedding = model.predict(img)[0].tolist()
+
+        print(f"model time: {time.time() - start_time}")
 
         resp_obj = {}
         resp_obj["embedding"] = embedding
