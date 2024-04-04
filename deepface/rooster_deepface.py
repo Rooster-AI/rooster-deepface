@@ -103,7 +103,7 @@ def create_encodings_database(
         pbar = tqdm(
             range(0, len(employees)),
             desc="Finding representations",
-            disable=silent,
+            disable=True,
         )
         for index in pbar:
             employee = employees[index]
@@ -218,12 +218,10 @@ def match_face(
             "target_h",
         ],
     )
-    # print(f"Data Frame Creating took {time.time()-tic}s")
     resp_obj = []
     target_img = facial_data["face"]
     target_region = facial_data["facial_area"]
     # confidence = facial_data["confidence"]
-    # rep_time = time.time()
 
     # If the face is already embedded, skip that step to increase speed
     if "embedding" in facial_data.keys():
@@ -239,7 +237,6 @@ def match_face(
             align=align,
             normalization=normalization,
         )
-        # print(f"Time to represent the face took {time.time()-rep_time}s")
 
         target_representation = target_embedding_obj[0]["embedding"]
 

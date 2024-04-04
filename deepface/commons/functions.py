@@ -1,6 +1,7 @@
 import os
 import base64
 from pathlib import Path
+import time
 from PIL import Image
 import requests
 
@@ -155,6 +156,7 @@ def extract_faces(
     Returns:
         list: a list of extracted faces.
     """
+    start_time = time.time()
 
     # this is going to store a list of img itself (numpy), it region and confidence
     extracted_faces = []
@@ -250,7 +252,7 @@ def extract_faces(
         raise ValueError(
             f"Detected face shape is {img.shape}. Consider to set enforce_detection arg to False."
         )
-
+    print(f"extract_faces took {time.time() - start_time} seconds")
     return extracted_faces
 
 

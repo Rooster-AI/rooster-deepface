@@ -348,7 +348,7 @@ def analyze(
             pbar = tqdm(
                 range(0, len(actions)),
                 desc="Finding actions",
-                disable=silent if len(actions) > 1 else True,
+                disable= True# silent if len(actions) > 1 else True,
             )
             for index in pbar:
                 action = actions[index]
@@ -577,7 +577,6 @@ def find(
         columns=df_cols,
     )
 
-    start_time = time.time()
     # img path might have more than once face
     source_objs = functions.extract_faces(
         img=img_path,
@@ -587,11 +586,9 @@ def find(
         enforce_detection=enforce_detection,
         align=align,
     )
-    print(f"Extract faces time: {time.time() - start_time}")
 
     resp_obj = []
 
-    start_time = time.time()
     for source_img, source_region, _ in source_objs:
         target_embedding_obj = represent(
             img_path=source_img,
@@ -641,7 +638,6 @@ def find(
 
         resp_obj.append(result_df)
 
-    print(f"Find time: {time.time() - start_time}")
     # -----------------------------------
     toc = time.time()
 
