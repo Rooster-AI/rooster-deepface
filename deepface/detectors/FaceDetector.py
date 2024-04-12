@@ -24,12 +24,14 @@ def build_model(detector_backend):
         # "ssd": SsdWrapper.build_model,
         # "dlib": DlibWrapper.build_model,
         "mtcnn": MtcnnWrapper.build_model,
+        "lean-mtcnn": LeanMtcnn.build_model,
         # "retinaface": RetinaFaceWrapper.build_model,
         # "mediapipe": MediapipeWrapper.build_model,
         # "yolov8": YoloWrapper.build_model,
         # "yunet": YunetWrapper.build_model,
         # "fastmtcnn": FastMtcnnWrapper.build_model,
     }
+    print(f"detector_backend: {detector_backend}")
 
     if not "face_detector_obj" in globals():
         face_detector_obj = {}
