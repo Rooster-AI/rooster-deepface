@@ -3,10 +3,6 @@ from deepface.detectors import FaceDetector
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 
-
-from mtcnn import MTCNN
-import matplotlib.pyplot as plt
-
 def build_model():
 
     face_detector = load_model("lean-mtcnn.h5")
