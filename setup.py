@@ -16,6 +16,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/serengil/deepface",
     packages=setuptools.find_packages(),
+        package_data={
+        'deepface': ['models/*.h5'],  # Include .h5 files in the models directory
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
