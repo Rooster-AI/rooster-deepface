@@ -1,16 +1,20 @@
 import cv2
 from deepface.detectors import FaceDetector
 from tensorflow.keras.models import load_model
-from pathlib import Path
+import os
 
 def build_model():
-    # Get the directory of the current script
-    module_dir = Path(__file__).parent
-    
-    # Construct the full path to the model file
-    model_path = module_dir / "lean-mtcnn.h5"
-    
-    # Load the model
+    print("Building model...")
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Name of your h5 file
+    h5_file_name = 'lean-mtcnn.h5'
+
+    # Construct the full path to the h5 file
+    model_path = os.path.join(script_dir, h5_file_name)
+
+    print("Model path: ", model_path)
+
     face_detector = load_model(str(model_path))
     
     return face_detector
@@ -45,4 +49,5 @@ def detect_face(face_detector, img, align=True):
     return resp
 
 if __name__ == "__main__":
-    face_detector = build_model()
+
+    build_model()
