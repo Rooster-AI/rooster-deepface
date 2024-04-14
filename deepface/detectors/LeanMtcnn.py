@@ -1,19 +1,33 @@
 import cv2
 from deepface.detectors import FaceDetector
+import requests
 from tensorflow.keras.models import load_model
 import os
 
 def build_model():
-    print("Building model...")
-    script_dir = os.path.dirname(os.path.abspath(__file__))
 
-    # Name of your h5 file
-    h5_file_name = 'lean-mtcnn.h5'
+    url = "https://drive.google.com/uc?export=download&id=1b_ddS_agG95yM10DmLiDQnM-l3POXA5g"
 
-    # Construct the full path to the h5 file
-    model_path = os.path.join(script_dir, h5_file_name)
+    model_name = "lean-mtcnn.h5"
 
-    print("Model path: ", model_path)
+    model_path = os.path.join(os.getcwd(), model_name)
+
+    if not os.path.exists(model_name):
+        print(f"{model_name} not found, downloading from {url}")
+        
+        # Make a GET request to download the file
+        response = requests.get(url)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        
+        # Save the file to the current directory
+        with open(model_name, 'wb') as f:
+            f.write(response.content)
+        
+        print(f"Downloaded {model_name} successfully.")
+    else:
+        print(f"{model_name} already exists, no download needed.")
+
+    print(f"loading {model_path}")
 
     face_detector = load_model(str(model_path))
     
