@@ -17,7 +17,7 @@ setuptools.setup(
     url="https://github.com/serengil/deepface",
     packages=setuptools.find_packages(),
         package_data={
-        'deepface': ['*.h5'],  # Include .h5 files in the models directory
+        'deepface': ['*.keras'],  # Include .h5 files in the models directory
     },
     classifiers=[
         "Programming Language :: Python :: 3",

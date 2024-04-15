@@ -7,31 +7,32 @@ import os
 
 def build_model():
 
-    url = "https://drive.google.com/uc?export=download&id=1b_ddS_agG95yM10DmLiDQnM-l3POXA5g"
+    url = "https://drive.google.com/uc?export=download&id=1Tng7GuiGTj_nzDCnhoFAo7aLLf9TtEsf"
 
-    model_name = "lean-mtcnn.h5"
+    model_name = "lean-mtcnn.keras"
 
-    model_path = os.path.join(os.getcwd(), model_name)
+    # model_path = os.path.join(os.getcwd(), model_name)
+    # print(f"model path: {model_path}")
 
-    if not os.path.exists(model_path):
+    if not os.path.exists(model_name):
         print(f"{model_name} not found, downloading from {url}")
         
         # Make a GET request to download the file
-        response = requests.get(url)
-        response.raise_for_status()  # Raise an exception for HTTP errors
+        # response = requests.get(url)
+        # response.raise_for_status()  # Raise an exception for HTTP errors
         
-        # Save the file to the current directory
-        with open(model_path, 'wb') as f:
-            f.write(response.content)
+        # # Save the file to the current directory
+        # with open(model_name, 'wb') as f:
+        #     f.write(response.content)
         
 
-        print(f"Downloaded {model_name} successfully.")
+        # print(f"Downloaded {model_name} successfully.")
     else:
         print(f"{model_name} already exists, no download needed.")
 
-    print(f"loading {model_path}")
+    print(f"loading {model_name}")
 
-    face_detector = load_model(str(model_path))
+    face_detector = load_model('lean-mtcnn.keras')
     
     return face_detector
 
