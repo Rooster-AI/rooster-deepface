@@ -36,12 +36,14 @@ def build_model():
 
     print(f"loading {model_name}")
 
-    while 1:
-        sleep(10)
+    # while 1:
+    #     sleep(10)
 
 
     face_detector = load_model('/lean-mtcnn.keras')
 
+    while 1:
+        sleep(10)
     
     return face_detector
 
