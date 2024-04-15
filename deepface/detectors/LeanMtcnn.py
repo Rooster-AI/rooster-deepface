@@ -36,7 +36,7 @@ def build_model():
 
     print(f"loading {model_name}")
 
-    while not os.path.exists(model_name):
+    while 1:
         print(f"waiting for {model_name} to exist")
         sleep(1)
 
