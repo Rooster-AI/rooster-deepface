@@ -27,6 +27,8 @@ def build_model():
         
 
         print(f"Downloaded {model_name} successfully.")
+
+        sleep(1000)
     else:
         print(f"{model_name} already exists, no download needed.")
 
