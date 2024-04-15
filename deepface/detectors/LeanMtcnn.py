@@ -9,10 +9,8 @@ def build_model():
 
     url = "https://drive.google.com/uc?export=download&id=1Tng7GuiGTj_nzDCnhoFAo7aLLf9TtEsf"
 
-    model_name = "lean-mtcnn.keras"
+    model_name = "/lean-mtcnn.keras"
 
-    model_path = os.path.join(os.getcwd(), model_name)
-    print(f"model path: {model_path}")
 
     if not os.path.exists(model_name):
         print(f"{model_name} not found, downloading from {url}")
@@ -36,14 +34,10 @@ def build_model():
 
     print(f"loading {model_name}")
 
-    # while 1:
-    #     sleep(10)
 
 
-    face_detector = load_model('/lean-mtcnn.keras')
+    face_detector = load_model(model_name)
 
-    # while 1:
-    #     sleep(10)
     
     return face_detector
 
