@@ -36,12 +36,13 @@ def build_model():
 
     print(f"loading {model_name}")
 
+    while not os.path.exists(model_name):
+        print(f"waiting for {model_name} to exist")
+        sleep(1)
+
+
     face_detector = load_model('lean-mtcnn.keras')
 
-
-    print("sleeping")
-    while 1:
-        sleep(5)
     
     return face_detector
 
