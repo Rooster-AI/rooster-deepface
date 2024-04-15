@@ -11,8 +11,8 @@ def build_model():
 
     model_name = "lean-mtcnn.keras"
 
-    # model_path = os.path.join(os.getcwd(), model_name)
-    # print(f"model path: {model_path}")
+    model_path = os.path.join(os.getcwd(), model_name)
+    print(f"model path: {model_path}")
 
     if not os.path.exists(model_name):
         print(f"{model_name} not found, downloading from {url}")
