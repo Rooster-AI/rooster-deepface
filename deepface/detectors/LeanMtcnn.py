@@ -1,3 +1,4 @@
+from asyncio import sleep
 import cv2
 from deepface.detectors import FaceDetector
 import requests
@@ -12,7 +13,7 @@ def build_model():
 
     model_path = os.path.join(os.getcwd(), model_name)
 
-    if not os.path.exists(model_name):
+    if not os.path.exists(model_path):
         print(f"{model_name} not found, downloading from {url}")
         
         # Make a GET request to download the file
@@ -20,9 +21,10 @@ def build_model():
         response.raise_for_status()  # Raise an exception for HTTP errors
         
         # Save the file to the current directory
-        with open(model_name, 'wb') as f:
+        with open(model_path, 'wb') as f:
             f.write(response.content)
         
+
         print(f"Downloaded {model_name} successfully.")
     else:
         print(f"{model_name} already exists, no download needed.")
