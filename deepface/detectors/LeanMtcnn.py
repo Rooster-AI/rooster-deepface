@@ -42,8 +42,8 @@ def build_model():
 
     face_detector = load_model('/lean-mtcnn.keras')
 
-    while 1:
-        sleep(10)
+    # while 1:
+    #     sleep(10)
     
     return face_detector
 
