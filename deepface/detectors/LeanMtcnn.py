@@ -18,15 +18,15 @@ def build_model():
         print(f"{model_name} not found, downloading from {url}")
         
         # Make a GET request to download the file
-        # response = requests.get(url)
-        # response.raise_for_status()  # Raise an exception for HTTP errors
+        response = requests.get(url)
+        response.raise_for_status()  # Raise an exception for HTTP errors
         
-        # # Save the file to the current directory
-        # with open(model_name, 'wb') as f:
-        #     f.write(response.content)
+        # Save the file to the current directory
+        with open(model_name, 'wb') as f:
+            f.write(response.content)
         
 
-        # print(f"Downloaded {model_name} successfully.")
+        print(f"Downloaded {model_name} successfully.")
     else:
         print(f"{model_name} already exists, no download needed.")
 
