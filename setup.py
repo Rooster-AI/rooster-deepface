@@ -1,9 +1,9 @@
 import setuptools
 
-with open("README.md", "r", encoding="utf-8") as fh:
+with open("C:/Users/bridg/Desktop/Sandbox/Rooster/rooster-deepface/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-with open("requirements.txt", "r", encoding="utf-8") as f:
+with open("C:/Users/bridg/Desktop/Sandbox/Rooster/rooster-deepface/requirements.txt", "r", encoding="utf-8") as f:
     requirements = f.read().split("\n")
 
 setuptools.setup(
@@ -17,7 +17,7 @@ setuptools.setup(
     url="https://github.com/serengil/deepface",
     packages=setuptools.find_packages(),
         package_data={
-        'deepface': ['/detectors/*.keras'],  # Include .h5 files in the models directory
+        'deepface': ['/models/*.keras'],  # Include .h5 files in the models directory
     },
     classifiers=[
         "Programming Language :: Python :: 3",

@@ -10,4 +10,7 @@ deepface.egg-info/
 tests/dataset/*.pkl
 tests/sandbox.ipynb
 *.pyc
-/lean-mtcnn_training/data/
+/lean-mtcnn_training/data/test_labels
+/lean-mtcnn_training/data/train_labels
+/lean-mtcnn_training/data/val_labels
+
